@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        font-size: 1rem;
+    }
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding: 0 1.5rem;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        padding: 0 3rem;
+    }
+}
+
+@media screen and (min-width: 900) {
+    .container {
+        padding: 0 4rem;
+    }
+    .main {
+        padding: 5rem 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        padding: 0 5rem;
+    }
+}
+
+.container > * + * {
+    margin-top: 2rem;
+}
+
+.visually-hidden {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    overflow: hidden;
+}
+
+.active {
+    overflow: auto;
+    height: auto;
+    visibility: visible;
+}
+
+.fw-semi-bold {
+    font-weight: 600;
+}
+
+.fw-light {
+    font-weight: 300;
+}
+
+.ml-sm {
+    margin-left: 0.3rem;
+}
+
+.mr-sm {
+    margin-right: 0.3rem;
+}
+
+.site-wrapper {
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(200, 15%, 8%);
+    overflow: hidden;
+}
+
+.main {
+    padding: 3rem 0;
+    background-color: hsl(0, 0%, 98%);
+}

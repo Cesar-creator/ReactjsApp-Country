@@ -1,0 +1,29 @@
+.header {
+    background-color: $clr-elements;
+    color: $clr-text;
+    padding: 2rem 0;
+    box-shadow: $bottom-shadow;
+}
+
+.header .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .title {
+    font-size: 1rem;
+}
+
+.header .toggle-mode-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: $clr-text;
+}
+
+.header .darkmode-text {
+    font-weight: 300;
+    margin-left: 0.3rem;
+    text-transform: capitalize;
+}
