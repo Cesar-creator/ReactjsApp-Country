@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const CountryCard = ({ country }) => {
+export const CountryCard = ({ country, theme }) => {
     return (
         <Link to={`/country/${country.name.common}`}>
-            <article className='country'>
+            <article className={`country ${theme === 'light' ? "divLight" : "divDark"}`}>
                 <img src={country.flags.svg} alt={`${country}'s flags`} />
                 <div className='info'>
                     <h3>{country.name.common}</h3>

@@ -90,12 +90,43 @@ a {
 
 .site-wrapper {
     min-height: 100vh;
-    background-color: hsl(0, 0%, 98%);
-    color: hsl(200, 15%, 8%);
+    
     overflow: hidden;
 }
 
 .main {
     padding: 3rem 0;
+}
+.mainLight{
     background-color: hsl(0, 0%, 98%);
+}
+.mainDark{
+    background-color: hsl(207, 26%, 17%);
+}
+.divLight{
+    background-color: $clr-elements;
+    color: $clr-text;
+}
+.divDark{
+    background-color: $clr-elementsD;
+    color: $clr-textD;
+}
+
+.textLight{
+    color: $clr-text !important;
+}
+.textDark{
+    color: $clr-textD !important;
+}
+.textDetailL{
+    color: $clr-text;
+}
+.textDetailD{
+    color: $clr-textD ;
+}
+.hoverLight{
+    background-color: hsl(0, 0%, 90%);
+}
+.hoverDark{
+    background-color: hsl(209, 23%, 33%);
 }

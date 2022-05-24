@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react'
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md'
 import { AppContext, useContext } from '../context/useAppContext'
 
-export const Filter = ({ handleFilter, handleShowFilter, regions, filterCategory }) => {
+export const Filter = ({ handleFilter, handleShowFilter, regions, filterCategory, theme }) => {
 
     const { setShowFilter, showFilter } = useContext(AppContext)
 
@@ -30,19 +30,19 @@ export const Filter = ({ handleFilter, handleShowFilter, regions, filterCategory
     }, [doSomething])
 
     return (
-        <div className='filter'>
-            <button className='filter-btn' ref={filterBtnRef}>
+        <div className={`filter ${theme === 'light' ? "textLight" : "textDark"}`}>
+            <button className={`filter-btn ${theme === 'light' ? "divLight" : "divDark"}`} ref={filterBtnRef}>
                 <span className='filter-text'>
                     {filterCategory ? filterCategory : filterText}
                 </span>
                 <MdOutlineKeyboardArrowDown />
             </button>
             {showFilter && (
-                <div className='list-container'>
+                <div className={`list-container ${theme === 'light' ? "divLight" : "divDark"}`}>
                     <ul className='regions-list'>
                         {regions.map(region => (
                             <li
-                                className='region'
+                            className={`${theme === 'light' ? "regionL" : "regionD"}`}
                                 key={region}
                                 data-region={region}
                                 onClick={handleFilter}>

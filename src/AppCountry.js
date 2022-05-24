@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import useLocalStorage from 'use-local-storage'
 import { Header } from './components/Header'
-import { AppContext, useContext  } from './context/useAppContext'
+import { AppContext, useContext } from './context/useAppContext'
 import { Countries } from './Views/Countries'
 import { DetailsView } from './Views/DetailsView'
 import { ErrorView } from './Views/ErrorView'
@@ -23,6 +23,7 @@ export const AppCountry = () => {
     'theme',
     isDefaultDark ? 'dark' : 'light'
   )
+
 
   // Fetch Data
   useEffect(() => {
@@ -81,14 +82,15 @@ export const AppCountry = () => {
 
   return (
     <Router>
-      <div className='site-wrapper' data-theme={theme}>
+      <div className={`site-wrapper ${theme === 'light' ? "mainLight" : "mainDark"}`} >
         <Header switchTheme={switchTheme} theme={theme} />
-        <main className='main'>
+        <main className={`main ${theme === 'light' ? "mainLight" : "mainDark"}`}>
           <Routes>
             <Route
               index
               element={
                 <Countries
+                  theme={theme}
                   handleFilter={handleFilter}
                   handleSearch={handleSearch}
                   regions={regions}
@@ -98,7 +100,7 @@ export const AppCountry = () => {
               }
             />
             <Route path='country'>
-              <Route path=':name' element={<DetailsView />} />
+              <Route path=':name' element={<DetailsView theme={theme} />} />
             </Route>
             <Route path='*' element={<ErrorView />} />
           </Routes>

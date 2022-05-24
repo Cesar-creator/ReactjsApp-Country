@@ -14,7 +14,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: $clr-elements;
     box-shadow: $box-shadow;
     color: inherit;
     padding: 1rem 1.5rem;
@@ -36,7 +35,6 @@
 
 .filter .list-container {
     width: 100%;
-    background-color: $clr-elements;
     box-shadow: $box-shadow;
     border-radius: $rounded;
     position: absolute;
@@ -54,18 +52,27 @@
     padding: 1.5rem;
 }
 
-.filter .region {
+.filter .regionL {
+    width: 100%;
+    display: block;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.filter .regionD {
     width: 100%;
     display: block;
     text-transform: capitalize;
     cursor: pointer;
 }
 
-.filter .region:hover {
+.filter .regionL:hover {
     cursor: pointer;
     background-color: $clr-hover;
 }
-
+.filter .regionD:hover {
+    cursor: pointer;
+    background-color: $clr-hoverD;
+}
 .filter .regions-list > * + * {
     margin-top: 1rem;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { BsArrowLeft } from 'react-icons/bs'
 
-export const DetailsView = () => {
+export const DetailsView = (theme) => {
 
   const { name } = useParams()
   const [country, setCountry] = useState(null)
@@ -25,7 +25,7 @@ export const DetailsView = () => {
   return (
     <div className='details'>
       <div className='container'>
-        <Link to='/' className='go-back-link'>
+        <Link to='/' className={`go-back-link ${theme === 'light' ? "textDetailL" : "textDetailD"}`}>
           <BsArrowLeft />
           Back
         </Link>
@@ -38,7 +38,7 @@ export const DetailsView = () => {
                 alt={`${country.name.common}'s flag`}
               />
             </div>
-            <div className='country-info'>
+            <div className={`country-info ${theme === 'light' ? "textDetailL" : "textDetailLD"}`}>
               <h3 className='country-name'>{country.name.common}</h3>
               <div className='info-body'>
                 <div className='main-details'>
@@ -86,10 +86,10 @@ export const DetailsView = () => {
               </div>
               <div className='border-countries'>
                 <h4>Border Countries</h4>
-                <ul className='border-countries-list'>
+                <ul className="border-countries-list">
                   {country.borders
                     ? Object.values(country.borders).map(border => (
-                      <li className='border-pill' key={border}>
+                      <li className={`border-pill ${theme === 'light' ? "divLight" : "divDark"}`} key={border}>
                         {border}
                       </li>
                     ))
